@@ -1,5 +1,5 @@
 <configuration>
-    <!-- ${WILDFLY_HOME}/bin/add-user.sh -a -u ejb -p test -->
+    <!-- ${WILDFLY_HOME}/bin/add-user.sh -a -u ejbuser -p password1! -g 'Role1,Role2,Role3' -->
     <authentication-client xmlns="urn:elytron:1.0">
         <authentication-rules>
             <rule use-configuration="default"/>
@@ -7,9 +7,9 @@
         <authentication-configurations>
             <configuration name="default">
                 <sasl-mechanism-selector selector="DIGEST-MD5"/>
-                <set-user-name name="ejb"/>
+                <set-user-name name="ejbuser"/>
                 <credentials>
-                    <clear-password password="test"/>
+                    <clear-password password="password1!"/>
                 </credentials>
             </configuration>
         </authentication-configurations>
